@@ -1,14 +1,11 @@
-package hexlet.code;
+package hexlet.code.games;
+import hexlet.code.Greet;
+
 import java.util.Scanner;
 public class Even {
     public static void checkingParity() {
         Scanner scanner = new Scanner(System.in);
         Greet.newGreet();
-//        System.out.println();
-//        System.out.println("Welcome to the Brain Games!");
-//        System.out.print("May I have your name? ");
-//        String userName = scanner.next();
-//        System.out.println("Hello, " + userName + "!");
         String yes = "yes";
         String no = "no";
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
@@ -23,8 +20,8 @@ public class Even {
                     System.out.println("Correct!");
                     i++;
                 } else {
-                    System.out.println("'" + yesNo + "'" + " is wrong answer ;(. Correct answer was 'yes'.");
-                    System.out.println("Let's try again, " + Greet.userName);
+                    System.out.println("'" + yesNo + "' is wrong answer ;(. Correct answer was '" + yes + "'.");
+                    System.out.println("Let's try again, " + Greet.userName + "!");
                     break;
                 }
             } else {
@@ -32,14 +29,14 @@ public class Even {
                     System.out.println("Correct!");
                     i++;
                 } else {
-                    System.out.println("'" + yesNo + "'" + " is wrong answer ;(. Correct answer was 'no'.");
-                    System.out.println("Let's try again, " + Greet.userName);
+                    System.out.println("'" + yesNo + "' is wrong answer ;(. Correct answer was '" + no + "'.");
+                    System.out.println("Let's try again, " + Greet.userName + "!");
                     break;
                 }
             }
         }
         if (i == 3) {
-            System.out.println("Congratulations, " + Greet.userName);
+            System.out.println("Congratulations, " + Greet.userName + "!");
         }
         scanner.close();
     }
