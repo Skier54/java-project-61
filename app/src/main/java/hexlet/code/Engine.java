@@ -1,10 +1,23 @@
 package hexlet.code;
-
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Engine {
-    public static void performsGeneralLogic() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static int attempt = 3;
+    public static int i = 0;
+    public static int randomInt() {
+        return (int) (Math.random() * 50);
     }
+    public static void correct() {
+        System.out.println("Correct!");
+        i++;
+    }
+    public static void noCorrect() {
+        System.out.println("Let's try again, " + Greet.userName + "!");
+    }
+    public static void victory() {
+        if (i == 3) {
+            System.out.println("Congratulations, " + Greet.userName + "!");
+        }
+    }
+
 }
