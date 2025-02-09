@@ -1,11 +1,10 @@
 package hexlet.code;
-//import java.util.Scanner;
 
 public class Engine {
     public static int attempt = 3;
     public static int i = 0;
     public static int randomInt() {
-        return (int) (Math.random() * 50);
+        return (int) (Math.random() * 100);
     }
     public static void correct() {
         System.out.println("Correct!");

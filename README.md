@@ -4,3 +4,4 @@
 ### Запишите аскинему с примером запуска игры, победой и поражением игрока. Опубликуйте её в сервисе и добавьте ссылку в README.md.
 https://asciinema.org/a/KzwZGiglLzxdzG13eI1K0VG0D
 https://asciinema.org/a/q6dkL6wwHaOvjasSUwTpiz18S
+https://asciinema.org/a/crqsJ923qmtsllD0fpnrIMy97

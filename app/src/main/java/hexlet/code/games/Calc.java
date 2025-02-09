@@ -8,7 +8,6 @@ import java.util.Random;
 import static hexlet.code.Engine.attempt;
 import static hexlet.code.Engine.i;
 
-//import static hexlet.code.Engine.*;
 
 public class Calc {
     public static void calculator() {
@@ -18,7 +17,6 @@ public class Calc {
         int result = 0;
         int userResult;
         System.out.println("What is the result of the expression?");
-        //int i = 0;
         while (i < attempt) {
             int randomInt = Engine.randomInt();
             int randomInt1 = Engine.randomInt();

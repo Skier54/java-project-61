@@ -14,7 +14,6 @@ public class Even {
         String yes = "yes";
         String no = "no";
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        //int i = 0;
         while (i < attempt) {
             int randomInt = Engine.randomInt();
             System.out.println("Question: " + randomInt);

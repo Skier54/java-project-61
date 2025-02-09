@@ -9,6 +9,5 @@ public class Greet {
         System.out.print("May I have your name? ");
         userName = greeting.next();
         System.out.println("Hello, " + userName + "!");
-        //greeting.close();
     }
 }

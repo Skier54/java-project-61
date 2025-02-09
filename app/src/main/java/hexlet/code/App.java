@@ -1,6 +1,7 @@
 package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 public class App {
@@ -11,6 +12,7 @@ public class App {
                 1 - Greet
                 2 - Even
                 3 - Calc
+                4 - GCD
                 0 - Exit
                 """);
         System.out.print("Your choice: ");
@@ -24,10 +26,11 @@ public class App {
                 Even.checkingParity(); break;
             case "3":
                 Calc.calculator(); break;
+            case "4":
+                GCD.nod(); break;
             default :
                 System.out.println("The game number was incorrectly dialed");
         }
         scanner.close();
-        //Engine.performsGeneralLogic();
     }
 }
