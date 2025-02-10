@@ -2,6 +2,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 public class App {
@@ -13,6 +14,7 @@ public class App {
                 2 - Even
                 3 - Calc
                 4 - GCD
+                5 - Progression
                 0 - Exit
                 """);
         System.out.print("Your choice: ");
@@ -28,6 +30,8 @@ public class App {
                 Calc.calculator(); break;
             case "4":
                 GCD.nod(); break;
+            case "5":
+                Progression.arithmeticProgression(); break;
             default :
                 System.out.println("The game number was incorrectly dialed");
         }
