@@ -5,22 +5,31 @@ import hexlet.code.Greet;
 import java.util.Scanner;
 import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.attempt;
-import static hexlet.code.Engine.i;
+import static hexlet.code.Engine.i;;
 
-public class Even {
-    public static void checkingParity() {
+public class Prime {
+    public static void checkingPrime() {
         Scanner scanner = new Scanner(System.in);
         Greet.newGreet();
-        String yesNo;
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        final int a = 1;
+        String yesNo = "no";
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         while (i < attempt) {
-            int randomInt = Engine.randomInt();
+            int randomInt = Engine.randomInt() + a;
             System.out.println("Question: " + randomInt);
             System.out.print("Your answer: ");
-            if (randomInt % 2 == 0) {
-                yesNo = "yes";
-            } else {
+            if (randomInt == 1) {
                 yesNo = "no";
+            } else if (randomInt == 2) {
+                yesNo = "yes";
+            }
+            for (int j = 2; j < randomInt; j++) {
+                if (randomInt % j == 0) {
+                    yesNo = "no";
+                    break;
+                } else {
+                    yesNo = "yes";
+                }
             }
             String userResult = scanner.next();
             if (yesNo.equals(userResult)) {

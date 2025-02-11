@@ -18,5 +18,8 @@ public class Engine {
             System.out.println("Congratulations, " + Greet.userName + "!");
         }
     }
+    public static void incorrectCorrect() {
+        System.out.print("' is wrong answer ;(. Correct answer was '");
+    }
 
 }

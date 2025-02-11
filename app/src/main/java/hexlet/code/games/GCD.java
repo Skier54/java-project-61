@@ -2,9 +2,8 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Greet;
-
 import java.util.Scanner;
-
+import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.attempt;
 import static hexlet.code.Engine.i;
 
@@ -12,8 +11,8 @@ public class GCD {
     public static void nod() {
         Scanner scanner = new Scanner(System.in);
         Greet.newGreet();
-        int nodUser;
-        int nod;
+        int userResult;
+        int result;
         System.out.println("Find the greatest common divisor of given numbers.");
         while (i < attempt) {
             int randomInt = Engine.randomInt();
@@ -27,18 +26,22 @@ public class GCD {
                     randomInt1 = randomInt1 % randomInt;
                 }
             }
-            nod = randomInt + randomInt1;
+            result = randomInt + randomInt1;
             try {
-                nodUser = scanner.nextInt();
+                userResult = scanner.nextInt();
             } catch (Exception e) {
-                System.out.println("'" + scanner.next() + "' is wrong answer ;(. Correct answer was '" + nod + "'.");
+                System.out.print("'" + scanner.next());
+                incorrectCorrect();
+                System.out.println(result + "'.");
                 Engine.noCorrect();
                 break;
             }
-            if (nod == nodUser) {
+            if (result == userResult) {
                 Engine.correct();
             } else {
-                System.out.println("'" + nodUser + "' is wrong answer ;(. Correct answer was '" + nod + "'.");
+                System.out.print("'" + userResult);
+                incorrectCorrect();
+                System.out.println(result + "'.");
                 Engine.noCorrect();
                 break;
             }

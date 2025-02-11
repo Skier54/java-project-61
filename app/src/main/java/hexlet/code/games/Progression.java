@@ -2,10 +2,9 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Greet;
-
 import java.util.Random;
 import java.util.Scanner;
-
+import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.attempt;
 import static hexlet.code.Engine.i;
 
@@ -36,14 +35,18 @@ public class Progression {
             try {
                 userResult = scanner.nextInt();
             } catch (Exception e) {
-                System.out.println("'" + scanner.next() + "' is wrong answer ;(. Correct answer was '" + result + "'.");
+                System.out.print("'" + scanner.next());
+                incorrectCorrect();
+                System.out.println(result + "'.");
                 Engine.noCorrect();
                 break;
             }
             if (result == userResult) {
                 Engine.correct();
             } else {
-                System.out.println("'" + userResult + "' is wrong answer ;(. Correct answer was '" + result + "'.");
+                System.out.print("'" + userResult);
+                incorrectCorrect();
+                System.out.println(result + "'.");
                 Engine.noCorrect();
                 break;
             }

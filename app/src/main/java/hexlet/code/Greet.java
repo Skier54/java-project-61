@@ -1,5 +1,7 @@
 package hexlet.code;
+
 import java.util.Scanner;
+
 public class Greet {
     public static String userName = "";
     public static void newGreet() {
