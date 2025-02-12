@@ -1,10 +1,11 @@
 package hexlet.code;
 
 public class Engine {
-    public static int attempt = 3;
+    public static final int ATTEMPT = 3;
     public static int i = 0;
+    public static final int MAX_NUMBER = 100;
     public static int randomInt() {
-        return (int) (Math.random() * 100);
+        return (int) (Math.random() * MAX_NUMBER);
     }
     public static void correct() {
         System.out.println("Correct!");
@@ -14,7 +15,7 @@ public class Engine {
         System.out.println("Let's try again, " + Greet.userName + "!");
     }
     public static void victory() {
-        if (i == 3) {
+        if (i == ATTEMPT) {
             System.out.println("Congratulations, " + Greet.userName + "!");
         }
     }

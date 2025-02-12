@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Greet;
 import java.util.Scanner;
 import static hexlet.code.Engine.incorrectCorrect;
-import static hexlet.code.Engine.attempt;
+import static hexlet.code.Engine.ATTEMPT;
 import static hexlet.code.Engine.i;;
 
 public class Prime {
@@ -14,7 +14,7 @@ public class Prime {
         final int a = 1;
         String yesNo = "no";
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        while (i < attempt) {
+        while (i < ATTEMPT) {
             int randomInt = Engine.randomInt() + a;
             System.out.println("Question: " + randomInt);
             System.out.print("Your answer: ");

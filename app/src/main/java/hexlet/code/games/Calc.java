@@ -5,10 +5,11 @@ import hexlet.code.Greet;
 import java.util.Scanner;
 import java.util.Random;
 import static hexlet.code.Engine.incorrectCorrect;
-import static hexlet.code.Engine.attempt;
+import static hexlet.code.Engine.ATTEMPT;
 import static hexlet.code.Engine.i;
 
 public class Calc {
+    public static final int MAT_OPERATION = 3;
     public static void calculator() {
         Scanner scanner = new Scanner(System.in);
         Greet.newGreet();
@@ -16,10 +17,10 @@ public class Calc {
         int result = 0;
         int userResult;
         System.out.println("What is the result of the expression?");
-        while (i < attempt) {
+        while (i < ATTEMPT) {
             int randomInt = Engine.randomInt();
             int randomInt1 = Engine.randomInt();
-            int operation = random.nextInt(3);
+            int operation = random.nextInt(MAT_OPERATION);
             switch (operation) {
                 case 0:
                     System.out.println("Question: " + randomInt + " + " + randomInt1);

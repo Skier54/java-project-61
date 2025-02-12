@@ -5,7 +5,7 @@ import hexlet.code.Greet;
 import java.util.Random;
 import java.util.Scanner;
 import static hexlet.code.Engine.incorrectCorrect;
-import static hexlet.code.Engine.attempt;
+import static hexlet.code.Engine.ATTEMPT;
 import static hexlet.code.Engine.i;
 
 public class Progression {
@@ -16,7 +16,7 @@ public class Progression {
         int result = 0;
         int userResult;
         System.out.println("What number is missing in the progression?");
-        while (i < attempt) {
+        while (i < ATTEMPT) {
             int randomInt = Engine.randomInt();
             int difference = random.nextInt(5) + 1;
             int index = random.nextInt(10);

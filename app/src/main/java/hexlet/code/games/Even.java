@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Greet;
 import java.util.Scanner;
 import static hexlet.code.Engine.incorrectCorrect;
-import static hexlet.code.Engine.attempt;
+import static hexlet.code.Engine.ATTEMPT;
 import static hexlet.code.Engine.i;
 
 public class Even {
@@ -13,7 +13,7 @@ public class Even {
         Greet.newGreet();
         String yesNo;
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        while (i < attempt) {
+        while (i < ATTEMPT) {
             int randomInt = Engine.randomInt();
             System.out.println("Question: " + randomInt);
             System.out.print("Your answer: ");
