@@ -9,6 +9,8 @@ import static hexlet.code.Engine.ATTEMPT;
 import static hexlet.code.Engine.i;
 
 public class Progression {
+    public static final int MAX_DIF = 5;
+    public static final int NUMBER_SERIES = 10;
     public static void arithmeticProgression() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
@@ -18,10 +20,10 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
         while (i < ATTEMPT) {
             int randomInt = Engine.randomInt();
-            int difference = random.nextInt(5) + 1;
-            int index = random.nextInt(10);
+            int difference = random.nextInt(MAX_DIF) + 1;
+            int index = random.nextInt(NUMBER_SERIES);
             System.out.print("Question: ");
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < NUMBER_SERIES; j++) {
                 randomInt = randomInt + difference;
                 if (index == j) {
                     result = randomInt;
