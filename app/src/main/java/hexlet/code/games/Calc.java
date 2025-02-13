@@ -6,7 +6,6 @@ import java.util.Scanner;
 import java.util.Random;
 import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
-import static hexlet.code.Engine.i;
 
 public class Calc {
     public static final int MAT_OPERATION = 3;
@@ -16,6 +15,7 @@ public class Calc {
         Random random = new Random();
         int result = 0;
         int userResult;
+        int i = 0;
         System.out.println("What is the result of the expression?");
         while (i < ATTEMPT) {
             int randomInt = Engine.randomInt();
@@ -49,6 +49,7 @@ public class Calc {
             }
             if (result == userResult) {
                 Engine.correct();
+                i++;
             } else {
                 System.out.print("'" + userResult);
                 incorrectCorrect();
@@ -57,6 +58,8 @@ public class Calc {
                 break;
             }
         }
-        Engine.victory();
+        if (i == ATTEMPT) {
+            Engine.victory();
+        }
     }
 }

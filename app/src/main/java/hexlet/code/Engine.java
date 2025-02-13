@@ -9,15 +9,12 @@ public class Engine {
     }
     public static void correct() {
         System.out.println("Correct!");
-        i++;
     }
     public static void noCorrect() {
         System.out.println("Let's try again, " + Greet.userName + "!");
     }
     public static void victory() {
-        if (i == ATTEMPT) {
-            System.out.println("Congratulations, " + Greet.userName + "!");
-        }
+        System.out.println("Congratulations, " + Greet.userName + "!");
     }
     public static void incorrectCorrect() {
         System.out.print("' is wrong answer ;(. Correct answer was '");

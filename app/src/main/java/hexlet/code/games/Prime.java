@@ -5,7 +5,6 @@ import hexlet.code.Greet;
 import java.util.Scanner;
 import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
-import static hexlet.code.Engine.i;;
 
 public class Prime {
     public static void checkingPrime() {
@@ -13,6 +12,7 @@ public class Prime {
         Greet.newGreet();
         final int a = 1;
         String yesNo = "no";
+        int i = 0;
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         while (i < ATTEMPT) {
             int randomInt = Engine.randomInt() + a;
@@ -34,6 +34,7 @@ public class Prime {
             String userResult = scanner.next();
             if (yesNo.equals(userResult)) {
                 Engine.correct();
+                i++;
             } else {
                 System.out.print("'" + userResult);
                 incorrectCorrect();
@@ -42,6 +43,8 @@ public class Prime {
                 break;
             }
         }
-        Engine.victory();
+        if (i == ATTEMPT) {
+            Engine.victory();
+        }
     }
 }

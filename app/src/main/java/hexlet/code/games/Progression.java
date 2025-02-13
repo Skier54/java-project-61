@@ -6,7 +6,6 @@ import java.util.Random;
 import java.util.Scanner;
 import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
-import static hexlet.code.Engine.i;
 
 public class Progression {
     public static final int MAX_DIF = 5;
@@ -17,6 +16,7 @@ public class Progression {
         Greet.newGreet();
         int result = 0;
         int userResult;
+        int i = 0;
         System.out.println("What number is missing in the progression?");
         while (i < ATTEMPT) {
             int randomInt = Engine.randomInt();
@@ -45,6 +45,7 @@ public class Progression {
             }
             if (result == userResult) {
                 Engine.correct();
+                i++;
             } else {
                 System.out.print("'" + userResult);
                 incorrectCorrect();
@@ -53,6 +54,8 @@ public class Progression {
                 break;
             }
         }
-        Engine.victory();
+        if (i == ATTEMPT) {
+            Engine.victory();
+        }
     }
 }

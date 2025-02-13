@@ -5,13 +5,13 @@ import hexlet.code.Greet;
 import java.util.Scanner;
 import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
-import static hexlet.code.Engine.i;
 
 public class Even {
     public static void checkingParity() {
         Scanner scanner = new Scanner(System.in);
         Greet.newGreet();
         String yesNo;
+        int i = 0;
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         while (i < ATTEMPT) {
             int randomInt = Engine.randomInt();
@@ -25,6 +25,7 @@ public class Even {
             String userResult = scanner.next();
             if (yesNo.equals(userResult)) {
                 Engine.correct();
+                i++;
             } else {
                 System.out.print("'" + userResult);
                 incorrectCorrect();
@@ -33,6 +34,8 @@ public class Even {
                 break;
             }
         }
-        Engine.victory();
+        if (i == ATTEMPT) {
+            Engine.victory();
+        }
     }
 }

@@ -5,7 +5,6 @@ import hexlet.code.Greet;
 import java.util.Scanner;
 import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
-import static hexlet.code.Engine.i;
 
 public class GCD {
     public static void nod() {
@@ -13,6 +12,7 @@ public class GCD {
         Greet.newGreet();
         int userResult;
         int result;
+        int i = 0;
         System.out.println("Find the greatest common divisor of given numbers.");
         while (i < ATTEMPT) {
             int randomInt = Engine.randomInt();
@@ -38,6 +38,7 @@ public class GCD {
             }
             if (result == userResult) {
                 Engine.correct();
+                i++;
             } else {
                 System.out.print("'" + userResult);
                 incorrectCorrect();
@@ -46,6 +47,8 @@ public class GCD {
                 break;
             }
         }
-        Engine.victory();
+        if (i == ATTEMPT) {
+            Engine.victory();
+        }
     }
 }
