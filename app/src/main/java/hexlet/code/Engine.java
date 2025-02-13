@@ -2,7 +2,6 @@ package hexlet.code;
 
 public class Engine {
     public static final int ATTEMPT = 3;
-    public static int i = 0;
     public static final int MAX_NUMBER = 100;
     public static int randomInt() {
         return (int) (Math.random() * MAX_NUMBER);
@@ -11,10 +10,10 @@ public class Engine {
         System.out.println("Correct!");
     }
     public static void noCorrect() {
-        System.out.println("Let's try again, " + Greet.userName + "!");
+        System.out.println("Let's try again, " + Greet.getUserName() + "!");
     }
     public static void victory() {
-        System.out.println("Congratulations, " + Greet.userName + "!");
+        System.out.println("Congratulations, " + Greet.getUserName() + "!");
     }
     public static void incorrectCorrect() {
         System.out.print("' is wrong answer ;(. Correct answer was '");

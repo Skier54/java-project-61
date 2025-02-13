@@ -3,7 +3,10 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Greet {
-    static String userName = "";
+    private static String userName = "";
+    public static String getUserName() {
+        return userName;
+    }
     public static void newGreet() {
         Scanner greeting = new Scanner(System.in);
         System.out.println();
