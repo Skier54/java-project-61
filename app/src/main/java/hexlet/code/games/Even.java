@@ -7,6 +7,9 @@ import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
 
 public class Even {
+    public static boolean isEven(int randomInt) {
+        return randomInt % 2 == 0;
+    }
     public static void checkingParity() {
         Scanner scanner = new Scanner(System.in);
         Greet.newGreet();
@@ -17,11 +20,7 @@ public class Even {
             int randomInt = Engine.randomInt();
             System.out.println("Question: " + randomInt);
             System.out.print("Your answer: ");
-            if (randomInt % 2 == 0) {
-                yesNo = "yes";
-            } else {
-                yesNo = "no";
-            }
+            yesNo = isEven(randomInt) ? "yes" : "no";
             String userResult = scanner.next();
             if (yesNo.equals(userResult)) {
                 Engine.correct();
@@ -39,3 +38,4 @@ public class Even {
         }
     }
 }
+

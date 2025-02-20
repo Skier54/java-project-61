@@ -8,35 +8,38 @@ import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
 
 public class Calc {
-    public static final int MAT_OPERATION = 3;
+    public static int isCals(int randomInt, int randomInt1, String operation) {
+        int result = 0;
+        switch (operation) {
+            case "+":
+                result = randomInt + randomInt1;
+                break;
+            case "-":
+                result = randomInt - randomInt1;
+                break;
+            case "*":
+                result = randomInt * randomInt1;
+                break;
+            default:
+                break;
+        }
+        return  result;
+    }
     public static void calculator() {
         Scanner scanner = new Scanner(System.in);
         Greet.newGreet();
         Random random = new Random();
-        int result = 0;
+        int result;
         int userResult;
         int i = 0;
         System.out.println("What is the result of the expression?");
         while (i < ATTEMPT) {
             int randomInt = Engine.randomInt();
             int randomInt1 = Engine.randomInt();
-            int operation = random.nextInt(MAT_OPERATION);
-            switch (operation) {
-                case 0:
-                    System.out.println("Question: " + randomInt + " + " + randomInt1);
-                    result = randomInt + randomInt1;
-                    break;
-                case 1:
-                    System.out.println("Question: " + randomInt + " - " + randomInt1);
-                    result = randomInt - randomInt1;
-                    break;
-                case 2:
-                    System.out.println("Question: " + randomInt + " * " + randomInt1);
-                    result = randomInt * randomInt1;
-                    break;
-                default:
-                    break;
-            }
+            String[] operations = {"+", "-", "*"};
+            String operation = operations[random.nextInt(operations.length)];
+            result = isCals(randomInt, randomInt1, operation);
+            System.out.println("Question: " + randomInt + " " + operation + " " + randomInt1);
             System.out.print("Your answer: ");
             try {
                 userResult = scanner.nextInt();

@@ -7,6 +7,19 @@ import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
 
 public class Prime {
+    public static boolean isPrime(int randomInt) {
+        if (randomInt < 2) {
+            return false;
+        } else if (randomInt == 2) {
+            return true;
+        }
+        for (int j = 2; j <= randomInt / 2; j++) {
+            if (randomInt % j == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
     public static void checkingPrime() {
         Scanner scanner = new Scanner(System.in);
         Greet.newGreet();
@@ -18,19 +31,7 @@ public class Prime {
             int randomInt = Engine.randomInt() + a;
             System.out.println("Question: " + randomInt);
             System.out.print("Your answer: ");
-            if (randomInt == 1) {
-                yesNo = "no";
-            } else if (randomInt == 2) {
-                yesNo = "yes";
-            }
-            for (int j = 2; j < randomInt; j++) {
-                if (randomInt % j == 0) {
-                    yesNo = "no";
-                    break;
-                } else {
-                    yesNo = "yes";
-                }
-            }
+            yesNo = isPrime(randomInt) ? "yes" : "no";
             String userResult = scanner.next();
             if (yesNo.equals(userResult)) {
                 Engine.correct();
