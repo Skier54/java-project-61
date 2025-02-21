@@ -1,10 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Greet;
-import java.util.Scanner;
 import java.util.Random;
-import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
 
 public class Calc {
@@ -26,43 +23,23 @@ public class Calc {
         return  result;
     }
     public static void calculator() {
-        Scanner scanner = new Scanner(System.in);
-        Greet.newGreet();
         Random random = new Random();
-        int result;
-        int userResult;
         int i = 0;
-        System.out.println("What is the result of the expression?");
-        while (i < ATTEMPT) {
-            int randomInt = Engine.randomInt();
-            int randomInt1 = Engine.randomInt();
+        String isGames = "What is the result of the expression?";
+        String[] strRandomInt = new String[ATTEMPT];
+        int[] randomIntOne = new int[ATTEMPT];
+        int[] randomIntTwo = new int[ATTEMPT];
+        int[] result = new int[ATTEMPT];
+        String[] strResult = new String[ATTEMPT];
+        for (int j = 0; j < ATTEMPT; j++) {
+            randomIntOne[i] = Engine.randomInt();
+            randomIntTwo[i] = Engine.randomInt();
             String[] operations = {"+", "-", "*"};
             String operation = operations[random.nextInt(operations.length)];
-            result = isCals(randomInt, randomInt1, operation);
-            System.out.println("Question: " + randomInt + " " + operation + " " + randomInt1);
-            System.out.print("Your answer: ");
-            try {
-                userResult = scanner.nextInt();
-            } catch (Exception e) {
-                System.out.print("'" + scanner.next());
-                incorrectCorrect();
-                System.out.println(result + "'.");
-                Engine.noCorrect();
-                break;
-            }
-            if (result == userResult) {
-                Engine.correct();
-                i++;
-            } else {
-                System.out.print("'" + userResult);
-                incorrectCorrect();
-                System.out.println(result + "'.");
-                Engine.noCorrect();
-                break;
-            }
+            result[i] = isCals(randomIntOne[i], randomIntTwo[i], operation);
+            strResult[i] = String.valueOf(result[i]);
+            strRandomInt[i] = randomIntOne[i] + " " + operation + " " + randomIntTwo[i];
         }
-        if (i == ATTEMPT) {
-            Engine.victory();
-        }
+        Engine.logic(strResult, strRandomInt, isGames);
     }
 }

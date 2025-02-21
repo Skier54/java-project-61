@@ -1,9 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Greet;
-import java.util.Scanner;
-import static hexlet.code.Engine.incorrectCorrect;
 import static hexlet.code.Engine.ATTEMPT;
 
 public class GCD {
@@ -18,40 +15,19 @@ public class GCD {
         return randomInt + randomInt1;
     }
     public static void nod() {
-        Scanner scanner = new Scanner(System.in);
-        Greet.newGreet();
-        int userResult;
-        int result;
-        int i = 0;
-        System.out.println("Find the greatest common divisor of given numbers.");
-        while (i < ATTEMPT) {
-            int randomInt = Engine.randomInt();
-            int randomInt1 = Engine.randomInt();
-            result = isGCD(randomInt, randomInt1);
-            System.out.println("Question: " + randomInt + " " + randomInt1);
-            System.out.print("Your answer: ");
-            try {
-                userResult = scanner.nextInt();
-            } catch (Exception e) {
-                System.out.print("'" + scanner.next());
-                incorrectCorrect();
-                System.out.println(result + "'.");
-                Engine.noCorrect();
-                break;
-            }
-            if (result == userResult) {
-                Engine.correct();
-                i++;
-            } else {
-                System.out.print("'" + userResult);
-                incorrectCorrect();
-                System.out.println(result + "'.");
-                Engine.noCorrect();
-                break;
-            }
+        String isGames = "Find the greatest common divisor of given numbers.";
+        String[] strRandomInt = new String[ATTEMPT];
+        int[] randomIntOne = new int[ATTEMPT];
+        int[] randomIntTwo = new int[ATTEMPT];
+        int[] result = new int[ATTEMPT];
+        String[] strResult = new String[ATTEMPT];
+        for (int i = 0; i < ATTEMPT; i++) {
+            randomIntOne[i] = Engine.randomInt();
+            randomIntTwo[i] = Engine.randomInt();
+            result[i] = isGCD(randomIntOne[i], randomIntTwo[i]);
+            strResult[i] = String.valueOf(result[i]);
+            strRandomInt[i] = randomIntOne[i] + " " + randomIntTwo[i];
         }
-        if (i == ATTEMPT) {
-            Engine.victory();
-        }
+        Engine.logic(strResult, strRandomInt, isGames);
     }
 }
