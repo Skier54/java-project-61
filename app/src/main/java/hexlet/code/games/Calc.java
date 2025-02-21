@@ -24,14 +24,13 @@ public class Calc {
     }
     public static void calculator() {
         Random random = new Random();
-        int i = 0;
         String isGames = "What is the result of the expression?";
         String[] strRandomInt = new String[ATTEMPT];
         int[] randomIntOne = new int[ATTEMPT];
         int[] randomIntTwo = new int[ATTEMPT];
         int[] result = new int[ATTEMPT];
         String[] strResult = new String[ATTEMPT];
-        for (int j = 0; j < ATTEMPT; j++) {
+        for (int i = 0; i < ATTEMPT; i++) {
             randomIntOne[i] = Engine.randomInt();
             randomIntTwo[i] = Engine.randomInt();
             String[] operations = {"+", "-", "*"};
