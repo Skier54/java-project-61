@@ -34,7 +34,7 @@ public class Progression {
                 str[j] = String.valueOf(result[j]);
                 if (j == index[i]) {
                     strResult[i] = str[j];
-                    str[j] = ".. ";
+                    str[j] = "..";
                     System.out.println(str[j]);
                 }
                 strRandomInt[i] = strRandomInt[i] + " " + str[j];
