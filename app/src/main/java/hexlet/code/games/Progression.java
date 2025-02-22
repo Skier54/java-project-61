@@ -35,11 +35,10 @@ public class Progression {
                 if (j == index[i]) {
                     strResult[i] = str[j];
                     str[j] = "..";
-                    System.out.println(str[j]);
                 }
                 strRandomInt[i] = strRandomInt[i] + " " + str[j];
             }
-            strRandomInt[i] = strRandomInt[i].replaceAll("null", "");
+            strRandomInt[i] = strRandomInt[i].replaceAll("null ", "");
         }
         Engine.logic(strResult, strRandomInt, isGames);
     }
