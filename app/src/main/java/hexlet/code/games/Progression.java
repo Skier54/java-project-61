@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+
 import java.util.Random;
 import static hexlet.code.Engine.ATTEMPT;
 
@@ -21,6 +22,7 @@ public class Progression {
         String[] strRandomInt = new String[ATTEMPT];
         int[] randomInt = new int[ATTEMPT];
         String[] strResult = new String[ATTEMPT];
+        String[] str = new String[NUMBER_SERIES];
         int[] difference = new int[ATTEMPT];
         int[] index = new int[ATTEMPT];
         for (int i = 0; i < ATTEMPT; i++) {
@@ -28,15 +30,18 @@ public class Progression {
             difference[i] = random.nextInt(MAX_DIF) + 1;
             index[i] = random.nextInt(NUMBER_SERIES);
             int[] result = isProgression(randomInt[i], difference[i]);
-            strResult[i] = String.valueOf(result[i]);
             for (int j = 0; j < result.length; j++) {
+                str[j] = String.valueOf(result[j]);
                 if (j == index[i]) {
-                    strResult[j] = ".. ";
+                    strResult[i] = str[j];
+                    str[j] = ".. ";
+                    System.out.println(str[j]);
                 }
+                strRandomInt[i] = strRandomInt[i] + " " + str[j];
             }
-            strRandomInt[i] = strResult[i];
-            Engine.logic(strResult, strRandomInt, isGames);
+            strRandomInt[i] = strRandomInt[i].replaceAll("null", "");
         }
+        Engine.logic(strResult, strRandomInt, isGames);
     }
 }
 
