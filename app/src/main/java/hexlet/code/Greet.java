@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class Greet {
     private static String userName = "";
+
     public static String getUserName() {
         return userName;
     }
+
     public static void newGreet() {
         Scanner greeting = new Scanner(System.in);
         System.out.println();

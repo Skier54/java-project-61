@@ -4,10 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int ATTEMPT = 3;
-    public static final int MAX_NUMBER = 100;
-    public static int randomInt() {
-        return (int) (Math.random() * MAX_NUMBER);
-    }
+
     public static void logic(String[] result, String[] randomInt, String isGames) {
         Scanner scanner = new Scanner(System.in);
         int i = 0;

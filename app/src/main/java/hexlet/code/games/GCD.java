@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import static hexlet.code.Engine.ATTEMPT;
 
 public class GCD {
@@ -14,6 +16,7 @@ public class GCD {
         }
         return randomInt + randomInt1;
     }
+
     public static void nod() {
         String isGames = "Find the greatest common divisor of given numbers.";
         String[] strRandomInt = new String[ATTEMPT];
@@ -22,8 +25,8 @@ public class GCD {
         int[] result = new int[ATTEMPT];
         String[] strResult = new String[ATTEMPT];
         for (int i = 0; i < ATTEMPT; i++) {
-            randomIntOne[i] = Engine.randomInt();
-            randomIntTwo[i] = Engine.randomInt();
+            randomIntOne[i] = Utils.randomInt();
+            randomIntTwo[i] = Utils.randomInt();
             result[i] = isGCD(randomIntOne[i], randomIntTwo[i]);
             strResult[i] = String.valueOf(result[i]);
             strRandomInt[i] = randomIntOne[i] + " " + randomIntTwo[i];

@@ -1,5 +1,4 @@
 plugins {
-    distribution
     application
     id("com.github.ben-manes.versions") version "0.52.0"
     checkstyle
@@ -26,5 +25,4 @@ tasks.test {
 }
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
-    //standardInput(System.in)
 }

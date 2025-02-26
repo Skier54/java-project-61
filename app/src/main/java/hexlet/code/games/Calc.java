@@ -1,12 +1,14 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import java.util.Random;
 import static hexlet.code.Engine.ATTEMPT;
 
 public class Calc {
     public static int isCals(int randomInt, int randomInt1, String operation) {
-        int result = 0;
+        int result;
         switch (operation) {
             case "+":
                 result = randomInt + randomInt1;
@@ -18,10 +20,11 @@ public class Calc {
                 result = randomInt * randomInt1;
                 break;
             default:
-                break;
+                throw new Error("Unknown operator: " + operation + " !");
         }
-        return  result;
+        return result;
     }
+
     public static void calculator() {
         Random random = new Random();
         String isGames = "What is the result of the expression?";
@@ -31,8 +34,8 @@ public class Calc {
         int[] result = new int[ATTEMPT];
         String[] strResult = new String[ATTEMPT];
         for (int i = 0; i < ATTEMPT; i++) {
-            randomIntOne[i] = Engine.randomInt();
-            randomIntTwo[i] = Engine.randomInt();
+            randomIntOne[i] = Utils.randomInt();
+            randomIntTwo[i] = Utils.randomInt();
             String[] operations = {"+", "-", "*"};
             String operation = operations[random.nextInt(operations.length)];
             result[i] = isCals(randomIntOne[i], randomIntTwo[i], operation);
